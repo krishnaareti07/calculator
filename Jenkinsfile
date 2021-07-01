@@ -2,8 +2,9 @@ pipeline {
   environment {
     registry = "javaajisaiharsha/calculator"
     registryCredential = 'dockerhub'
-    KUBECONFIG="$JENKINS_HOME/.kube/config1"
-    KUBECONFIG="$JENKINS_HOME/.kube/config2"
+    KUBECONFIG="$JENKINS_HOME/.kube/config"
+    
+    
   }
   agent any
   stages {
