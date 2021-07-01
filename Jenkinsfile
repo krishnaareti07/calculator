@@ -5,7 +5,7 @@ pipeline {
     if ($GIT_BRANCH == "dev")
     then
         KUBECONFIG="$JENKINS_HOME/.kube/config1"
-    elif ($GIT_BRANCH == "prod")
+    elif [[ $GIT_BRANCH == "prod" ]]
     then
         KUBECONFIG="$JENKINS_HOME/.kube/config2"
     fi
