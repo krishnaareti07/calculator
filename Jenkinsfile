@@ -14,7 +14,7 @@ pipeline {
         
         sh "docker build -t javaajisaiharsha/calculator:$BUILD_ID-$BRANCH_NAME ." 
        // sh "docker run -dp 80:80 javaajisaiharsha/calculator-search:$BUILD_ID"
-        sh "docker push javaajisaiharsha/calculator$BUILD_ID-$BRANCH_NAME"
+        sh "docker push javaajisaiharsha/calculator:$BUILD_ID-$BRANCH_NAME"
       }
     }
     stage('Creating Deployment') {
