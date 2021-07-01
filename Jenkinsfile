@@ -2,6 +2,7 @@ pipeline {
   environment {
     registry = "javaajisaiharsha/calculator"
     registryCredential = 'dockerhub'
+    sh '''#!/bin/bash
     if ($GIT_BRANCH == "dev")
     then
         KUBECONFIG="$JENKINS_HOME/.kube/config1"
@@ -9,6 +10,7 @@ pipeline {
     then
         KUBECONFIG="$JENKINS_HOME/.kube/config2"
     fi
+    '''
   }
   agent any
   stages {
