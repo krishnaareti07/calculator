@@ -2,10 +2,10 @@ pipeline {
   environment {
     registry = "javaajisaiharsha/calculator"
     registryCredential = 'dockerhub'
-    if [[$GIT_BRANCH == "dev"]]
+    if ($GIT_BRANCH == "dev")
     then
         KUBECONFIG="$JENKINS_HOME/.kube/config1"
-    elif [[$GIT_BRANCH == "dev"]]
+    elif ($GIT_BRANCH == "prod")
     then
         KUBECONFIG="$JENKINS_HOME/.kube/config2"
     fi
