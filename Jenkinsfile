@@ -27,6 +27,7 @@ pipeline {
                      kubectl set image deployment/calc-app nginx=javaajisaiharsha/calculator:$BUILD_ID-$BRANCH_NAME -n $BRANCH_NAME
                 elif [[ $GIT_BRANCH == "master" ]]
                 then
+                    export KUBECONFIG=~/.kube/config2
                     kubectl set image deployment/calc-app nginx=javaajisaiharsha/calculator:$BUILD_ID-$BRANCH_NAME -n prod
                 fi         
             '''
