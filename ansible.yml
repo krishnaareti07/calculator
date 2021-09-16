@@ -1,0 +1,18 @@
+---
+- hosts: harsha
+  tasks:
+  - name: docker install
+    become: true
+    become_method: sudo
+    become_user: root
+    shell:
+      cmd: sudo apt install docker.io -y
+  - name: stating service
+    shell:
+      cmd: sudo systemctl start docker
+  - name: pulling nginx image
+    shell:
+      cmd: sudo docker pull nginx:latest
+  - name: container run
+    shell:
+      cmd: sudo docker run -d --name harsha -p 80:80 nginx:latest
